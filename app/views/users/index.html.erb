@@ -1,0 +1,9 @@
+<%for user in @users %>
+  <div>
+    <%= link_to "Edit", edit_user_path(user) %>
+    <%= user.username %>
+    <%= user.email %>
+    <%= user.password %>
+  </div>
+<%end%>
+<%= link_to "New", new_user_path %>

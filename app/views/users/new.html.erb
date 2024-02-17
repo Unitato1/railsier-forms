@@ -1,0 +1,14 @@
+<h1>New User</h1>
+<% @user.errors.full_messages.each do |message| %>
+  <div><%= message %></div>
+<% end %>
+<%= form_with model: @user , url: {action: "create"} do |form|%>
+    <%= form.label :username, "Username: " %>
+    <%= form.text_field :username %>
+    <%= form.label :password, "Password: " %>
+    <%= form.text_field :password %>
+    <%= form.label :email, "Email: " %>
+    <%= form.email_field :email %>
+  <%= form.submit "Submit" %>
+<%end%>
+<%= link_to "Homepage", users_path %>
